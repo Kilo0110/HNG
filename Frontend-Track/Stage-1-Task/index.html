@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="./css/index.css"
+  >
+  <title>KamCy Ahaka - HNG Frontend Track || Stage 1 Task</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a
+        href=""
+        class="hng-internship-logo"
+      >
+        <img
+          src="./img/g3vszz82nqtwhs3gawwu.webp"
+          alt="hng-internship-logo"
+        >
+      </a>
+
+      <menu class="main-nav__menu">
+        <li class="menu-item"><a
+            href=""
+            class="main-nav__menu__link"
+          >Stage 1</a></li>
+      </menu>
+    </nav>
+  </header>
+  <main class="main-container">
+    <header class="main-container__header">
+      <div class="header-columns current-day-column">
+        <p>Current Day</p>
+        <span
+          id="currentDayOfTheWeek"
+          data-testid="currentDayOfTheWeek"
+        ></span>
+      </div>
+      <div class="header-columns current-UTC-column">
+        <p>Current UTC Time</p>
+        <span
+          id="currentDayOfTheWeek"
+          data-testid="currentUTCTime"
+        ></span>
+      </div>
+    </header>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1 data-testid="slackUserName">KamCy Ahaka</h1>
+          <p class="tracks">My Enrolled Tracks: <span data-testid="myTrack">Frontend and Backend</span></p>
+          <p class="hover-btn">Hover to see more</p>
+        </div>
+        <div class="flip-card-back">
+          <img
+            src="./img/me.jpg"
+            alt="Avatar"
+            data-testid="slackDisplayImage"
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>You can find the source code to this repository <a
+      href=""
+      data-testid=“githubURL”
+    >here</a></footer>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

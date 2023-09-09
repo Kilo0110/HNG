@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: sans-serif;
+}
+
+.main-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px 2px rgba(#000000, 0.3);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  padding-inline: 2em;
+  padding-block: 1em;
+
+  img {
+    width: clamp(100px, 100px + 1vw, 200px);
+    border: 0;
+  }
+
+  &__menu {
+    list-style: none;
+
+    &__link {
+      text-decoration: none;
+      color: navy;
+      font-weight: bold;
+      font-size: clamp(12px, 1rem + .75vw, 40px);
+    }
+  }
+}
+
+.main-container__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  padding: 1em;
+  text-align: center;
+
+  p {
+    font-weight: bold;
+  }
+}
+
+.flip-card {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+
+  box-shadow: 0 0 5px 2px rgba(#000000, 0.3);
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: navy;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  .hover-btn {
+    padding: 1em 3em;
+    border: 2px solid white;
+    border-radius: 3rem;
+    transform: scale(.9);
+    transition: transform;
+
+    animation: pulse 1000ms ease-in-out infinite forwards;
+  }
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #eee;
+  transform: rotateY(180deg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+footer {
+  margin-block: 2em;
+  text-align: center;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
